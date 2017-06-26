@@ -18,10 +18,11 @@ public class MapsFragment extends SupportMapFragment implements OnMapReadyCallba
 
     private GoogleMap mMap;
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-         getMapAsync(this);
+        getMapAsync(this);
     }
 
 
@@ -57,8 +58,12 @@ public class MapsFragment extends SupportMapFragment implements OnMapReadyCallba
 
 
         // Add a marker in Sydney and move the camera
-//        LatLng sydney = new LatLng(-34, 151);
-//        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-//        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
+        LatLng poli = new LatLng(-8.05936, -34.903502);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(poli,17.0f));
+        mMap.addMarker(new MarkerOptions()
+                .position(poli)
+                .title("Aqui é a poli!")
+                .snippet("UPE"));
     }
 }
